@@ -1,3 +1,3 @@
 # RaviRepository
 
-Monthly Expense Tracker is a DotNet Core App
+Sample HTML Website for CI/CD testing
