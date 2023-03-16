@@ -1,17 +1,29 @@
 name: CI -> Deploy to My website
 on:
   push:
-    branches: [ master]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       # Here is the deployment action
       - name: Upload from public_html via FTP
         uses: airvzxf/ftp-deployment-action@latest
         with:
-          server: ftps://waws-prod-blu-359.ftp.azurewebsites.windows.net/site/wwwroot
-          user: ravitestcicd\$ravitestcicd
-          password: sHulptZzdqg4nQgRYxGmZBaP9auFJbArxh95bGu1dClBzkg8gj6PJEfTEQrY
-          local_dir: "*"
-          delete: "false"    
+          server: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: "./public_html"
+          remote_dir: "/site/wwwroot/"
+          delete: "false"
+          max_retries: "7"
+          no_symlinks: "false"
+          ftp_ssl_allow: "true"
+          ftp_use_feat: "true"
+          ftp_nop_interval: "9"
+          net_max_retries: "0"
+          net_persist_retries: "11"
+          net_timeout: "13s"
+          dns_max_retries: "17"
+          dns_fatal_timeout: "never"
