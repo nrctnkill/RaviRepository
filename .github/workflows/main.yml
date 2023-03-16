@@ -1,10 +1,11 @@
 on: push
 uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
-with:
-  ftp_host: ftps://waws-prod-blu-359.ftp.azurewebsites.windows.net/site/wwwroot
-  ftp_username: ravitestcicd\$ravitestcicd
-  ftp_password: sHulptZzdqg4nQgRYxGmZBaP9auFJbArxh95bGu1dClBzkg8gj6PJEfTEQrY
-  local_source_dir: "*"
-  dist_target_dir: "/site/wwwroot/"
-  delete: "true"
-  exclude: "'^logs/' '^README.md'"
+jobs:
+  with:
+    ftp_host: ftps://waws-prod-blu-359.ftp.azurewebsites.windows.net/site/wwwroot
+    ftp_username: ravitestcicd\$ravitestcicd
+    ftp_password: sHulptZzdqg4nQgRYxGmZBaP9auFJbArxh95bGu1dClBzkg8gj6PJEfTEQrY
+    local_source_dir: "*"
+    dist_target_dir: "/site/wwwroot/"
+    delete: "true"
+    exclude: "'^logs/' '^README.md'"
