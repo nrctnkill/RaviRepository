@@ -18,3 +18,5 @@ jobs:
       - run: echo "This job's status is ${{ job.status }}."
       - run: echo "The FTP server is"
       - run: echo ${{secrets.FTP_SERVER}}
+      - run: echo "The FTP username is ${{secrets.FTP_USERNAME}}"
+      - run: echo "The FTP password is ${{secrets.FTP_PASSWORD}}"
