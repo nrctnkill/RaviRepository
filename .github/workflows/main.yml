@@ -13,7 +13,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: "*"
+          local_dir: "/github/workspace"
           remote_dir: "/site/wwwroot"
           delete: "false"
           max_retries: "7"
