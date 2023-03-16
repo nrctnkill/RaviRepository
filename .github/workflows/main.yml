@@ -1,4 +1,6 @@
 name: CI -> Deploy to My website
+script:
+  - ls
 on:
   push:
     branches: [master]
