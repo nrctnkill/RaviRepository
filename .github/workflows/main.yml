@@ -16,4 +16,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "This job's status is ${{ job.status }}."
-      - run: echo "The FTP server is ${{ $FTP_SERVER }}"
+      - run: echo "The FTP server is"
+      - run: echo $FTP_SERVER
